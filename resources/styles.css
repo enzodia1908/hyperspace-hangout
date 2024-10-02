@@ -520,11 +520,12 @@ header {
 @media only screen and (max-width: 425px) {
 
     .location {
-        padding: 4rem 4rem;
+        padding: 4rem 3.5rem;
     }
 
     .location ul {
         gap: 2rem;
+        justify-content: center;
     }
 
 }
