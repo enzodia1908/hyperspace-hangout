@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./resources/styles.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+        <title>The Hyperspace Hangout</title>
+    </head>
+
+    <body>
+
+        <!-- NAVIGATION BAR  -->
+        <header>
+            <div class="desktop">
+                <nav class="nav-bar">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about-us">About Us</a></li>
+                        <li><a href="index.html">Schedule</a></li>
+                        <li><a href="index.html">Events</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#games-library">Games Library</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="burger-icon" onclick="toggleNav()">
+                <img src="./resources/images/burger-bar.png" alt="Navigation"/>
+            </div>
+                
+            <div class="side-nav" id="sideNav">
+                <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">&times;</a>
+                <a href="index.html">Home</a>
+                <a href="#about-us">About Us</a>
+                <a href="index.html">Schedule</a>
+                <a href="index.html">Events</a>
+                <a href="#menu">Menu</a>
+                <a href="#games-library">Games Library</a>
+            </div>
+
+            
+        </header>    
+
+        <!-- WELCOME -->
+        <div class="welcome-container">
+            <div class="welcome-image">
+                <img src="./resources/images/dice-on-cards.avif"/>
+            
+
+                <div class="welcome-text-overlay">
+                    <h2>WELCOME TO THE</h2><br>
+                    <span class="club-title">HYPERSPACE<br>HANGOUT</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- HELLO / ABOUT US -->
+        <div class="about-us" id="about-us">
+            <div class="about-us-text">A vibrant space where gamers of all kinds come together! Whether you’re into board games, arcade classics, or console adventures, our club offers a diverse range of gaming experiences. Enjoy delicious food and drinks while connecting with like-minded enthusiasts in a relaxed atmosphere. Join us for unforgettable game nights and make lasting friendships in the ultimate gaming hub!</div>
+        </div>
+
+
+        <!-- GAMES LIBRARY  -->
+        <div class="games-library" id="games-library">
+          <h1 class="heading">EXPLORE, PLAY, CONQUER</h1>
+
+            <div class="games-library-container">
+                <div class="game-slide">
+                    <div class="game-image"><img src="./resources/images/two-people-playing-board-game-on-table.avif" alt="Two people playing a tabletop board game"/></div>
+                    <div>
+                        <h3><a href="#games-library">Tabletop RPGs</a></h3>
+                        <p>Embark on adventures in imaginative worlds, guided by our in house Game Master. Or bring your own!</p>
+                    </div>
+                </div>
+                <div class="game-slide">
+                    <div class="game-image"><img src="./resources/images/call-of-duty.avif" alt="Call Of Duty on a console setup"/></div>
+                    <div>
+                        <h3><a href="#games-library">Gaming Hubs</a></h3>
+                        <p>Immersive experiences across various genres within private gaming hubs for both solo and mulitplayer sessions.</p>
+                    </div>
+                </div>
+                <div class="game-slide">
+                    <div class="game-image"><img src="./resources/images/snakes-and-ladders.avif" alt="Snakes and Ladders"/></div>
+                    <div>
+                        <h3><a href="#games-library">Strategy Games</a></h3>
+                        <p>Simple games like Snakes & Ladders and Connect Four offer quick, easy fun!</p>
+                    </div>
+                </div>
+                <div class="game-slide">
+                    <div class="game-image"><img src="./resources/images/arcade.jpeg" alt="Arcade area"/></div>
+                    <div>
+                        <h3><a href="#games-library">Retro Arcade Area</a></h3>
+                        <p>High-energy, nostalgic fun with a wide variety of classic and modern games.</p>
+                    </div>
+                </div>
+            </div>                
+            <h2><a href="index.html">FIND YOUR NEXT FAVOURITE GAME</a></h2>
+        </div>
+
+        <!-- OTHER FEATURES  -->
+        <div class="menu" id="menu">
+            <div class="menu-grid">
+                <div class="menu-image1"><img src="./resources/images/menu-image1.jpg" alt="Bartender making a cocktail"/></div>
+                <div class="menu-image2"><img src="./resources/images/menu-image2.webp" alt="Image of a cocktail"/></div>
+                <div class="menu-text">Immerse yourself in a perfect blend of gaming and socializing. Our club features a full bar offering a fantastic selection of cocktails and delicious food to keep you fueled during those epic gaming sessions. Whether you're teaming up with friends for a round of your favorite game or simply unwinding with great drinks and tasty bites, The Hyperspace Hangout is perfect for gamers and non-gamers alike. 
+                </div>
+            </div>
+
+            <ul class="menu-list">
+                <a href="#"><li><h3>A LA CARTE</h3></li></a>
+                <a href="#"><li><h3>BAR MENU</h3></li></a>
+                <a href="#"><li><h3>COCKTAILS</h3></li></a>
+                <a href="#"><li><h3>SET MENU</h3></li></a>
+            </ul>
+        </div>
+        
+
+        <!-- LOCATION -->
+        <div class="location">
+            <h2>YOUR GALACTIC GAMING SANCTUARY AWAITS.</h2>
+            <h3>22 TIE Fighter Terrace, Imperial City<br>
+                Death Star District 99887</h3>
+
+            <ul>
+                <a href="#"><li><img src="./resources/images/instagram.png" alt="Instagram icon"/></li></a>
+                <a href="#"><li><img src="./resources/images/facebook.png" alt="Facebook icon"/></li></a>
+                <a href="#"><li><img src="./resources/images/tik-tok.png" alt="Tiktok icon"/></li></a>
+                <a href="#"><li><img src="./resources/images/envelope.png" alt="Mail icon"/></li></a>
+                <a href="#"><li><img src="./resources/images/phone-call.png" alt="Phone icon"/></li></a>
+            </ul>
+        </div>
+
+    <script src="./resources/script.js"></script>
+    
+    </body>
+</html>
+
+
