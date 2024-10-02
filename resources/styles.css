@@ -1,0 +1,530 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    font-size: 16px;
+    font-family: "Roboto Mono", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(245, 240, 240);
+}
+
+@font-face {
+    font-family: "Last Resort";
+    src: url("./fonts/last-resort-colour.ttf") format('truetype');
+}
+
+a {
+    text-decoration: none;
+    transition: color 1s ease;
+    font-weight: 500;
+    color:rgb(42, 206, 206);
+}
+
+a:hover {
+    color: rgb(149, 65, 240);
+}
+
+/* Navigation Bar  */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(20,5,19, 0.9);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+    justify-content: center;
+    padding: 0;
+}
+
+.burger-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-icon img {
+    width: 30px;
+    height: auto;
+}
+
+/* Side Navigation Menu (hidden by default) */
+.side-nav {
+    height: 100%;
+    width: 0; /* Initially hidden with 0 width */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(20,5,19,0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 2;
+}
+
+.side-nav a {
+    padding: 0.5rem 0rem 0.5rem 2rem;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-nav .close-btn {
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+    font-size: 2rem;
+}
+
+@media (min-width: 769px) {
+    /* Hide the burger icon and side navigation on larger screens */
+    .side-nav {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    /* Reduce size of nav bar for tablets */
+    .desktop ul {
+        gap: 2rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .burger-icon {
+        display: block;  
+        position: fixed; 
+        top: 1%;        
+        left: 3%;     
+    }
+}
+
+/* Welcome Content  */
+
+.welcome-container {
+    display: flex;
+    padding-top: 0.1rem;
+}
+
+.welcome-image {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    flex: 1rem;
+    justify-content: center;
+    margin: 0;
+    height: auto;
+    flex-basis: 40rem;
+}
+
+.welcome-image img {
+    display: block;
+    width: 100%;
+    height: 60rem;
+    margin-top: -20rem;
+    object-fit: cover;
+    opacity: 0.25;
+}
+
+.welcome-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 8, 85, 0.9); 
+    mix-blend-mode: multiply; 
+}
+
+.welcome-text-overlay {
+    position: absolute;
+    top: 30%;
+    left: 4%;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    flex-grow: 0;
+    height: auto;
+    color: rgba(221, 221, 221, 0.55);
+    opacity: 0; 
+    animation: fadeIn 2.5s forwards; 
+}
+
+.welcome-text-overlay h2 {
+    font-size: 2rem;
+}
+
+.club-title {
+    font-family: "Last Resort", sans-serif;
+    color: rgba(42, 206, 206, 0.76);
+    font-size: 4rem;
+    background: linear-gradient(90deg, rgba(54, 33, 145, 0.8), rgba(18, 3, 53, 0.8), rgba(100, 2, 2, 0.8));
+    -webkit-background-clip: text; /* For Safari */
+    -webkit-text-fill-color: transparent; /* For Safari */
+    background-clip: text;
+    -webkit-text-stroke: 0.1rem rgba(221, 221, 221, 0.5);
+    line-height: 5rem;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; 
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+        .welcome-container {
+        display: flex;
+        padding-top: 0.1rem;
+    }
+
+    .welcome-image {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        flex: 1rem;
+        justify-content: center;
+        margin: 0;
+        height: auto;
+        flex-basis: 10rem;
+    }
+
+    .welcome-image img {
+        display: block;
+        width: 100%;
+        height: 60rem;
+        margin-top: -20rem;
+        object-fit: cover;
+        opacity: 0.25;
+    }
+}
+
+@media only screen and (max-width: 425px){
+
+    .welcome-container {
+        display: flex;
+        padding-top: 0rem;
+    }
+
+    .welcome-image img {
+        height: 40rem;
+        width: auto;
+    }
+
+    .welcome-text-overlay {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        text-align: center;
+    }
+
+    .welcome-text-overlay h2 {
+        font-size: 1.5rem;
+    }
+
+    .club-title {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        flex-grow: 0;
+    }
+}
+
+/* About Us  */
+
+.about-us {
+    padding: 17rem 10rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr;
+    background-color: rgb(20,5,19);
+    color: rgb(245, 240, 240);
+}
+
+.about-us-text {
+    width: 25rem;
+}
+
+@media only screen and (max-width: 425px) {
+
+    .about-us {
+        padding: 4rem 3.5rem;
+        display: flex;
+        background-color: rgb(20,5,19);
+        color: rgb(245, 240, 240);
+    }
+    
+    .about-us-text {
+      width: 20rem;
+    }
+    
+}
+
+/* Games Library Content  */
+
+.games-library {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(126, 16, 24, 0.863);
+    padding: 4rem 0;
+}
+
+.games-library h1,
+.games-library h2 {
+    text-align: center;
+}
+
+.heading {
+    color: rgba(221, 221, 221, 0.8);
+}
+
+.games-library-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 3rem 1rem 3rem 1rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+
+.game-slide {
+    display: flex;
+    height: 32rem;
+    width: 22rem;
+    flex-direction: column;
+    padding: 0.5rem;
+    background-color: rgb(20,5,19);
+    color: rgb(245, 240, 240);
+}
+
+.game-image {
+    height: 20rem;
+    width: auto;
+    overflow: hidden;
+    object-fit: cover;
+
+}
+
+.game-image img {
+    height: 100%;
+    /* gap: 1.5rem */
+}
+
+@media only screen and (max-width: 425px) {
+
+    .games-library {
+        padding: 2.5rem 3.5rem;
+    }
+
+    .games-library h1 {
+        font-size: 1.5rem;
+    }
+
+    .games-library h2 {
+        font-size: 1.3rem;
+        padding: 0 1rem;
+    }
+
+    .games-library-container {
+        padding: 2rem 0rem;
+        gap: 0.8rem;
+    }
+
+    
+    .game-slide {
+        height: 27rem;
+        width: 20rem;
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    .game-image {
+        height: 20rem;
+        width: auto;
+        overflow: hidden;
+        object-fit: cover;
+
+    }
+
+    .game-image img {
+        height: 100%;
+        /* gap: 1.5rem */
+    }
+
+}
+
+
+/* MENU */
+
+.menu {
+    padding: 7rem 2rem 3.5rem 2rem;
+    width: 100%;
+    height: auto;
+    flex-basis: 40rem;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgb(20,5,19);
+    color: rgb(245, 240, 240);
+    flex-direction: column;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 3rem; 
+    row-gap: 1rem;
+    margin: 0 auto;
+    max-width: 55rem;
+    height: 50rem;
+}
+
+.menu-image1,
+.menu-image2 {
+    width: auto;
+    object-fit: cover; 
+    overflow: hidden;
+    height: 100%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.menu-image1 img,
+.menu-image2 img {
+    width: auto; 
+    height: 100%; 
+    object-fit:fill; 
+}
+
+
+.menu-image1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.menu-image2 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.menu-text {
+    grid-column: 2; 
+    grid-row: 1 / span 2; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden;
+    white-space: normal;
+    padding-right: 3rem;
+}
+
+.menu-list {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    padding-top: 3.5rem;
+}
+
+@media only screen and (max-width: 425px) {
+
+    .menu {
+        padding: 2.5rem 3.5rem 2rem 3.5rem;
+    }
+    
+    .menu-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.5fr repeat(2, 1fr);
+        row-gap: 0.5rem;
+        height: 70rem;
+    }
+
+    .menu-image1 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .menu-image2 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    
+    .menu-text {
+        grid-column: 1; 
+        grid-row: 1; 
+        padding-right: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .menu-list {
+        list-style-type: none;
+        display: grid;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0 1.5rem;
+        padding: 1rem 0;
+    }
+
+    .menu-list h3 {
+        font-size: 1.3rem;
+        line-height: 0rem;
+    }
+}
+
+/* Location */
+
+.location {
+    flex-direction: column;
+    background-color: rgba(126, 16, 24, 0.863);
+    padding: 10rem 10rem;
+    display: flex;
+}
+
+.location h3 {
+    font-weight: 400;
+}
+
+.location ul {
+    display: flex;
+    list-style-type: none;
+    gap: 2rem;
+    padding: 0;
+}
+
+@media only screen and (max-width: 425px) {
+
+    .location {
+        padding: 4rem 4rem;
+    }
+
+    .location ul {
+        gap: 2rem;
+    }
+
+}
